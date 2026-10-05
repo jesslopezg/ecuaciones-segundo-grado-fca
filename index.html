@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ecuaciones de Segundo Grado | FCA</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="hero">
+  <div>
+    <div class="eyebrow">FCA · Tronco Común</div>
+    <h1>Ecuaciones de Segundo Grado</h1>
+    <p>Practica factorización, fórmula general y problemas aplicados a negocios.</p>
+  </div>
+  <div class="stats">
+    <div><b id="score">0</b><span>Puntos</span></div>
+    <div><b id="streak">0</b><span>Racha</span></div>
+    <div><b id="accuracy">0%</b><span>Acierto</span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="modes">
+    <button class="mode active" data-mode="practice"><b>Práctica libre</b><span>Con pistas y solución</span></button>
+    <button class="mode" data-mode="challenge"><b>Reto de 10</b><span>Resultado final</span></button>
+    <button class="mode" data-mode="exam"><b>Modo examen</b><span>Sin ayudas</span></button>
+  </section>
+
+  <section class="card controls">
+    <div>
+      <label>Tema</label>
+      <select id="topic">
+        <option value="mixed">Mixto</option>
+        <option value="identify">Identificar a, b y c</option>
+        <option value="factor">Factorización</option>
+        <option value="formula">Fórmula general</option>
+        <option value="discriminant">Discriminante</option>
+        <option value="business">Aplicación a negocios</option>
+      </select>
+    </div>
+    <div>
+      <label>Dificultad</label>
+      <select id="difficulty">
+        <option value="basic">Básico</option>
+        <option value="intermediate" selected>Intermedio</option>
+        <option value="advanced">Avanzado</option>
+      </select>
+    </div>
+    <button id="newBtn" class="primary">Nuevo ejercicio</button>
+  </section>
+
+  <section class="layout">
+    <article class="card exercise">
+      <div class="topline">
+        <div>
+          <span id="topicBadge" class="badge"></span>
+          <span id="difficultyBadge" class="badge light"></span>
+        </div>
+        <span id="progressText"></span>
+      </div>
+
+      <h2 id="title"></h2>
+      <p id="problem" class="problem"></p>
+
+      <div id="equation" class="equation"></div>
+
+      <div id="dynamicInputs"></div>
+
+      <div class="actions">
+        <button id="checkBtn" class="primary">Comprobar</button>
+        <button id="hintBtn" class="secondary">Ver pista</button>
+        <button id="solutionBtn" class="secondary">Ver solución</button>
+        <button id="nextBtn" class="secondary">Siguiente</button>
+      </div>
+
+      <div id="feedback" class="feedback hidden"></div>
+      <div id="hintBox" class="helper hidden"></div>
+      <div id="solutionBox" class="helper hidden"></div>
+    </article>
+
+    <aside class="card learn">
+      <h3>Guía rápida</h3>
+      <div class="formula">ax² + bx + c = 0</div>
+      <p><b>a</b> es el coeficiente cuadrático, <b>b</b> el lineal y <b>c</b> el término independiente.</p>
+
+      <h4>Fórmula general</h4>
+      <div class="formula small">x = (-b ± √(b² - 4ac)) / 2a</div>
+
+      <h4>Discriminante</h4>
+      <div class="formula small">Δ = b² - 4ac</div>
+      <ul>
+        <li>Δ &gt; 0: dos soluciones reales.</li>
+        <li>Δ = 0: una solución real doble.</li>
+        <li>Δ &lt; 0: no hay soluciones reales.</li>
+      </ul>
+
+      <div class="tip">
+        <b>En negocios:</b> una solución matemática puede no tener sentido si representa una cantidad negativa de productos, personas o dinero.
+      </div>
+    </aside>
+  </section>
+
+  <section class="card progress-card">
+    <div class="section-head">
+      <div>
+        <h3>Progreso por tema</h3>
+        <p>Se guarda en este dispositivo.</p>
+      </div>
+      <button id="resetBtn" class="link-danger">Reiniciar progreso</button>
+    </div>
+    <div id="progressGrid" class="progress-grid"></div>
+  </section>
+</main>
+
+<div id="modal" class="modal hidden">
+  <div class="modal-card">
+    <h2 id="modalTitle">Resultado</h2>
+    <p id="modalSummary"></p>
+    <div id="modalBreakdown"></div>
+    <button id="closeModal" class="primary">Volver a practicar</button>
+  </div>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
